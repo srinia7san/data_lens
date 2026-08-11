@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-dotenv
+sqlalchemy
+psycopg2-binary
+pandas
+pyarrow
+plotly
+langgraph
+langchain-google-genai
+google-genai
+pinecone
+pydantic
+websockets

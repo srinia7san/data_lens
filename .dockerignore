@@ -1,0 +1,22 @@
+# Exclude python bytecode and virtual environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude git and environment files
+.git/
+.gitignore
+.env
+
+# Exclude frontend code and node modules
+frontend/
+node_modules/
+
+# Exclude documentation and diagram assets
+chart_code.md
+hybrid_plotly_architecture.md
+langgraph_diagram.png
+.aider*

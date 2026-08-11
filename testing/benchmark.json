@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "difficulty": "Very Hard",
+    "question": "Which actor-category combination generated the highest rental payment?",
+    "ground_truth": ["actor","film_actor","film","film_category","category","inventory","rental","payment"]
+  },
+  {
+    "id": 2,
+    "difficulty": "Very Hard",
+    "question": "Which customer generated the highest payment from Comedy films?",
+    "ground_truth": ["customer","payment","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 3,
+    "difficulty": "Very Hard",
+    "question": "Which country has the highest average payment per customer?",
+    "ground_truth": ["country","city","address","customer","payment"]
+  },
+  {
+    "id": 4,
+    "difficulty": "Very Hard",
+    "question": "Which actor generated the most payment in each store?",
+    "ground_truth": ["actor","film_actor","film","inventory","rental","payment","customer","store"]
+  },
+  {
+    "id": 5,
+    "difficulty": "Very Hard",
+    "question": "Which film category has the highest payment per rental?",
+    "ground_truth": ["category","film_category","film","inventory","rental","payment"]
+  },
+  {
+    "id": 6,
+    "difficulty": "Very Hard",
+    "question": "Which customers have rented films from every available category?",
+    "ground_truth": ["customer","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 7,
+    "difficulty": "Very Hard",
+    "question": "Which language generated the highest payment among films released in the most popular category?",
+    "ground_truth": ["language","film","film_category","category","inventory","rental","payment"]
+  },
+  {
+    "id": 8,
+    "difficulty": "Very Hard",
+    "question": "Which actor appeared in films rented by customers from the highest payment country?",
+    "ground_truth": ["actor","film_actor","film","inventory","rental","customer","address","city","country","payment"]
+  },
+  {
+    "id": 9,
+    "difficulty": "Very Hard",
+    "question": "Which store generated the highest payment from Action films?",
+    "ground_truth": ["store","customer","payment","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 10,
+    "difficulty": "Very Hard",
+    "question": "Which city generated the highest payment from films featuring the most popular actor?",
+    "ground_truth": ["city","address","customer","payment","rental","inventory","film","film_actor","actor"]
+  },
+  {
+    "id": 11,
+    "difficulty": "Very Hard",
+    "question": "Which staff member processed the most rentals for films longer than 120 minutes?",
+    "ground_truth": ["staff","rental","inventory","film"]
+  },
+  {
+    "id": 12,
+    "difficulty": "Very Hard",
+    "question": "Which district has the most customers who rented R-rated films?",
+    "ground_truth": ["address","customer","rental","inventory","film"]
+  },
+  {
+    "id": 13,
+    "difficulty": "Very Hard",
+    "question": "Which actor has the highest average film replacement cost across all categories they appeared in?",
+    "ground_truth": ["actor","film_actor","film","film_category","category"]
+  },
+  {
+    "id": 14,
+    "difficulty": "Very Hard",
+    "question": "Which store has the most inventory of films with above-average rental rates?",
+    "ground_truth": ["store","inventory","film"]
+  },
+  {
+    "id": 15,
+    "difficulty": "Very Hard",
+    "question": "Which customer generated the highest payment on films featuring actors who appeared in fewer than 15 films?",
+    "ground_truth": ["customer","payment","rental","inventory","film","film_actor","actor"]
+  },
+  {
+    "id": 16,
+    "difficulty": "Boss",
+    "question": "Find the actor whose films generated the highest payment among customers from the country with the highest total payment.",
+    "ground_truth": ["actor","film_actor","film","inventory","rental","payment","customer","address","city","country"]
+  },
+  {
+    "id": 17,
+    "difficulty": "Boss",
+    "question": "Which category contributed the most payment in the highest performing store?",
+    "ground_truth": ["store","customer","payment","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 18,
+    "difficulty": "Boss",
+    "question": "Which actor-language pair generated the highest payment?",
+    "ground_truth": ["actor","film_actor","film","language","inventory","rental","payment"]
+  },
+  {
+    "id": 19,
+    "difficulty": "Boss",
+    "question": "Which customers generated the highest payment from films featuring actors who appeared in more than 30 films?",
+    "ground_truth": ["customer","payment","rental","inventory","film","film_actor","actor"]
+  },
+  {
+    "id": 20,
+    "difficulty": "Boss",
+    "question": "Which country generated the highest payment from Action films?",
+    "ground_truth": ["country","city","address","customer","payment","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 21,
+    "difficulty": "Boss",
+    "question": "Which actor generated the highest payment from customers living in cities where average payment exceeds the global average payment?",
+    "ground_truth": ["actor","film_actor","film","inventory","rental","payment","customer","address","city"]
+  },
+  {
+    "id": 22,
+    "difficulty": "Boss",
+    "question": "Which category generated the highest payment among films starring actors who never appeared in Horror films?",
+    "ground_truth": ["actor","film_actor","film","film_category","category","inventory","rental","payment"]
+  },
+  {
+    "id": 23,
+    "difficulty": "Boss",
+    "question": "Which store generated the highest payment from customers who rented films in every category?",
+    "ground_truth": ["store","customer","payment","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 24,
+    "difficulty": "Boss",
+    "question": "Which actor generated the highest payment in the category with the lowest number of films?",
+    "ground_truth": ["actor","film_actor","film","film_category","category","inventory","rental","payment"]
+  },
+  {
+    "id": 25,
+    "difficulty": "Boss",
+    "question": "Which country, category, and actor combination generated the highest overall rental payment?",
+    "ground_truth": ["country","city","address","customer","payment","rental","inventory","film","film_actor","actor","film_category","category"]
+  },
+  {
+    "id": 26,
+    "difficulty": "Boss",
+    "question": "Which staff member generated the most payment from customers in countries with fewer than 10 customers?",
+    "ground_truth": ["staff","payment","customer","address","city","country"]
+  },
+  {
+    "id": 27,
+    "difficulty": "Boss",
+    "question": "Which actor appeared in the most films that were rented but never returned across both stores?",
+    "ground_truth": ["actor","film_actor","film","inventory","rental","store"]
+  },
+  {
+    "id": 28,
+    "difficulty": "Boss",
+    "question": "Which city has customers whose total payment for Sci-Fi films exceeds the city average payment across all categories?",
+    "ground_truth": ["city","address","customer","payment","rental","inventory","film","film_category","category"]
+  },
+  {
+    "id": 29,
+    "difficulty": "Boss",
+    "question": "Which language has films with the highest average payment per rental among categories with more than 50 films?",
+    "ground_truth": ["language","film","film_category","category","inventory","rental","payment"]
+  },
+  {
+    "id": 30,
+    "difficulty": "Boss",
+    "question": "Find the store where the staff member with the highest total payment processed works, and list the top payment-generating category in that store.",
+    "ground_truth": ["store","staff","payment","rental","inventory","film","film_category","category","customer"]
+  }
+]
