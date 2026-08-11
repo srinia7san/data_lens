@@ -13,7 +13,7 @@ export default function ConnectionModal({ token, onClose, onSubmit, isLoading })
   const [copiedCmd, setCopiedCmd] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
   const [checkingStatus, setCheckingStatus] = useState(false);
-  const [localDbString, setLocalDbString] = useState("postgresql://postgres:root@localhost:5432/pagila");
+  const [localDbString, setLocalDbString] = useState("");
 
   const serverUrl = (import.meta.env.VITE_API_BASE_URL || window.location.origin).replace(/\/$/, "");
   const runCommand = `python connector.py --server ${serverUrl} --token ${token || "YOUR_TOKEN"} --db "${localDbString}"`;
