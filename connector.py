@@ -6,33 +6,38 @@ Run this script on your local machine to securely connect your local database
 
 Usage
 -----
-    python connector.py --token YOUR_AUTH_TOKEN --db postgresql://postgres:root@localhost:5432/pagila
-
-Optionally specify --server if the app is hosted on Render or another domain:
-    python connector.py --server wss://your-app.onrender.com --token YOUR_TOKEN --db postgresql://...
+    python connector.py --server https://your-app.onrender.com --token YOUR_TOKEN --db postgresql://postgres:root@localhost:5432/pagila
 """
 
 import argparse
 import asyncio
 import json
+import subprocess
 import sys
 import time
 from typing import Any
 
-# Check dependencies
-try:
-    import websockets
-except ImportError:
-    print("[ERROR] 'websockets' package is required. Install it using:")
-    print("        pip install websockets")
-    sys.exit(1)
+# Auto-install missing dependencies so users don't have to manual pip install
+def _ensure_dependencies():
+    packages = [
+        ("websockets", "websockets"),
+        ("sqlalchemy", "sqlalchemy"),
+        ("psycopg2", "psycopg2-binary"),
+    ]
+    for module_name, pip_name in packages:
+        try:
+            __import__(module_name)
+        except ImportError:
+            print(f"[Auto-Setup] Installing required package '{pip_name}'...")
+            try:
+                subprocess.check_call([sys.executable, "-m", "pip", "install", pip_name])
+            except Exception as e:
+                print(f"[Auto-Setup Warning] Could not install '{pip_name}': {e}")
 
-try:
-    from sqlalchemy import create_engine, inspect, text
-except ImportError:
-    print("[ERROR] 'sqlalchemy' package is required. Install it using:")
-    print("        pip install sqlalchemy")
-    sys.exit(1)
+_ensure_dependencies()
+
+import websockets
+from sqlalchemy import create_engine, inspect, text
 
 
 def discover_schema_dict(connection_string: str) -> dict[str, Any]:
