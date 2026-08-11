@@ -1,4 +1,4 @@
-from schema.models import TableSchema
+from schema.models import TableSchema, Column, ForeignKey
 from schema.schema_discovery import discover_schema
 from typing import List, Dict, Any
 import os
