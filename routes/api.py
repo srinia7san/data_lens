@@ -208,12 +208,14 @@ async def remove_connection(
 
 @router.websocket("/ws/connector")
 async def connector_ws(websocket: WebSocket, token: str = Query(...)):
+    await websocket.accept()
     user = storage.get_user_by_token(token)
     if not user:
+        print(f"[WebSocket] Rejected invalid/expired token: {token[:8]}...")
+        await websocket.send_json({"error": "Invalid or expired token. Please refresh your token from the app."})
         await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
         return
 
-    await websocket.accept()
     user_id = user["id"]
     ws_hub.register(user_id, websocket)
     print(f"[WebSocket] Connector connected for user {user['email']}")
