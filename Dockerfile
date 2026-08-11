@@ -26,6 +26,8 @@ COPY nodes/ /app/nodes/
 COPY routes/ /app/routes/
 COPY schema/ /app/schema/
 COPY utils/ /app/utils/
+COPY connector.py /app/connector.py
+
 
 # Start FastAPI server using uvicorn binding dynamically to Render's $PORT (fallback to 8000)
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
