@@ -15,7 +15,7 @@ export default function ConnectionModal({ token, onClose, onSubmit, isLoading })
   const [checkingStatus, setCheckingStatus] = useState(false);
   const [localDbString, setLocalDbString] = useState("postgresql://postgres:root@localhost:5432/pagila");
 
-  const serverUrl = window.location.origin;
+  const serverUrl = (import.meta.env.VITE_API_BASE_URL || window.location.origin).replace(/\/$/, "");
   const runCommand = `python connector.py --server ${serverUrl} --token ${token || "YOUR_TOKEN"} --db "${localDbString}"`;
 
   const checkStatus = async () => {
@@ -195,7 +195,7 @@ export default function ConnectionModal({ token, onClose, onSubmit, isLoading })
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#1f2937", padding: "8px 12px", borderRadius: "6px", marginBottom: "8px" }}>
                 <span style={{ fontSize: "13px", color: "#e5e7eb" }}>1. Download Connector Script</span>
                 <a
-                  href="/api/v1/connector/script"
+                  href={`${serverUrl}/api/v1/connector/script`}
                   download="connector.py"
                   className="btn-secondary"
                   style={{ display: "inline-flex", alignItems: "center", gap: "4px", padding: "4px 10px", fontSize: "12px", borderRadius: "4px", textDecoration: "none", background: "#374151", color: "#fff" }}
